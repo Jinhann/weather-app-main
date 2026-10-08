@@ -1,0 +1,27 @@
+.search-history {
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: var(--history-bg);
+}
+
+.search-history__heading {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.search-history__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-history__empty {
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--text-secondary);
+}

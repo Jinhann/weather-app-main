@@ -1,0 +1,55 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 44px;
+  padding: 0 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+/* Both labels occupy the same cell; the hidden one still reserves its width. */
+.button__layers {
+  display: grid;
+}
+
+.button__layer {
+  display: inline-flex;
+  grid-area: 1 / 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* visibility (not display) keeps the hidden label's size. */
+.button__layer[aria-hidden='true'] {
+  visibility: hidden;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.button--secondary {
+  border-color: var(--glass-border);
+  background: var(--secondary-button-bg);
+  color: var(--text);
+}
+
+.button--secondary:hover {
+  background: var(--input-bg);
+}

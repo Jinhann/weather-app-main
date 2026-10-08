@@ -1,0 +1,88 @@
+.weather-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  row-gap: 0.25rem;
+}
+
+.weather-card p {
+  margin: 0;
+}
+
+.weather-card__heading {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.weather-card__empty {
+  grid-column: 1 / -1;
+  padding: 1.5rem 0;
+  color: var(--text-secondary);
+}
+
+.weather-card__illustration {
+  position: absolute;
+  top: -4.5rem;
+  right: 0;
+  width: clamp(120px, 26vw, 190px);
+  height: auto;
+  pointer-events: none;
+}
+
+.weather-card__temperature {
+  grid-column: 1 / -1;
+  font-size: clamp(4rem, 15vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-text);
+}
+
+.weather-card__range {
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.weather-card__location {
+  font-weight: 700;
+}
+
+/* On desktop the meta items share the grid row with the location. */
+.weather-card__meta {
+  display: contents;
+}
+
+.weather-card__description {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 599px) {
+  .weather-card {
+    grid-template-columns: 1fr auto;
+    justify-content: stretch;
+  }
+
+  .weather-card__temperature,
+  .weather-card__range,
+  .weather-card__location {
+    grid-column: 1;
+  }
+
+  .weather-card__meta {
+    display: block;
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    align-self: end;
+    text-align: right;
+  }
+
+  .weather-card__illustration {
+    top: -4rem;
+    width: 110px;
+  }
+}

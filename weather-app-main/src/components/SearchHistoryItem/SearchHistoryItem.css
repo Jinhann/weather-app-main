@@ -1,0 +1,42 @@
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas: 'location time actions';
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.6rem 0.75rem 0.6rem 1.25rem;
+  border-radius: 16px;
+  background: var(--item-bg);
+}
+
+.history-item__location {
+  grid-area: location;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.history-item__time {
+  grid-area: time;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.history-item__actions {
+  grid-area: actions;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 599px) {
+  .history-item {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'location actions'
+      'time actions';
+    row-gap: 0.1rem;
+  }
+
+  .history-item__time {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,26 @@
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.text-field__label {
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.text-field__input {
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.text-field__input[aria-invalid='true'] {
+  border-color: var(--error-border);
+}

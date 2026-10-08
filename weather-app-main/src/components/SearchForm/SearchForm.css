@@ -1,0 +1,38 @@
+.search-form {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.search-form__field {
+  flex: 1 1 140px;
+}
+
+.search-form__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-form__error {
+  flex-basis: 100%;
+  margin: 0;
+  padding-left: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--error-fg);
+}
+
+@media (max-width: 599px) {
+  .search-form__field {
+    flex-basis: 100%;
+  }
+
+  .search-form__actions {
+    flex: 1;
+  }
+
+  .search-form__actions .button {
+    flex: 1;
+  }
+}

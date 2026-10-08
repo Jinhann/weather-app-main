@@ -1,0 +1,96 @@
+/* Design tokens: light theme is the default, dark overrides below. */
+:root {
+  color-scheme: light;
+  --bg-fallback: #c9b6f0;
+  --bg-image: url('../assets/bg-light.png');
+  --text: #000;
+  --text-secondary: #666;
+  --accent: #6c40b5;
+  --accent-hover: #5a3299;
+  --accent-text: #6c40b5;
+  --on-accent: #fff;
+  --panel-bg: rgba(255, 255, 255, 0.2);
+  --history-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --input-bg: rgba(255, 255, 255, 0.4);
+  --item-bg: rgba(255, 255, 255, 0.4);
+  --secondary-button-bg: rgba(255, 255, 255, 0.6);
+  --icon-button-bg: #fff;
+  --icon-button-fg: #666;
+  --icon-button-border: transparent;
+  --icon-button-hover-bg: #f1ebfb;
+  --error-bg: rgba(255, 229, 229, 0.9);
+  --error-border: #d93025;
+  --error-fg: #a50e0e;
+  --focus-ring: #4b2a99;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Open Sans', sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-fallback: #3b2a8a;
+  --bg-image: url('../assets/bg-dark.png');
+  --text: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --accent-text: #fff;
+  --panel-bg: rgba(26, 26, 26, 0.3);
+  --history-bg: rgba(26, 26, 26, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --input-bg: rgba(26, 26, 26, 0.5);
+  --item-bg: rgba(26, 26, 26, 0.5);
+  --secondary-button-bg: rgba(26, 26, 26, 0.5);
+  --icon-button-bg: transparent;
+  --icon-button-fg: rgba(255, 255, 255, 0.85);
+  --icon-button-border: rgba(255, 255, 255, 0.4);
+  --icon-button-hover-bg: rgba(255, 255, 255, 0.12);
+  --error-bg: rgba(120, 20, 30, 0.6);
+  --error-border: #ff8a8a;
+  --error-fg: #ffd6d6;
+  --focus-ring: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font);
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--bg-image) center / cover no-repeat fixed var(--bg-fallback);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+input {
+  color: inherit;
+}
+
+input::placeholder {
+  color: var(--text-secondary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
